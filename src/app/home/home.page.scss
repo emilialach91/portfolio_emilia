@@ -1,27 +1,132 @@
-#container {
-  text-align: center;
+ion-content {
+	video {
+		opacity: 0.8;
+		object-fit: cover;
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+	}
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+	.center {
+		top: 45%;
+		left: 15%;
+		position: absolute !important;
+		width: 100%;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+		h1 {
+			font-size: 110px;
+			font-family: "Licorice", cursive;
+			font-weight: 600;
+			letter-spacing: 1.2px;
+			line-height: 1;
+			color: #222428;
+			max-width: max-content;
+		}
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+		.text {
+			color: #222428;
+			margin: 10px 0 0 10px;
+			font-size: 25px;
+			font-family: "Nanum Gothic Coding", monospace;
+		}
 
-  color: #8c8c8c;
+		.cursor {
+			width: 3px;
+			text-align: left;
+			vertical-align: text-bottom;
+			font-size: 25px;
+		}
 
-  margin: 0;
-}
+		.cursor::after {
+			content: "|";
+			animation: blink 0.75s step-end infinite;
+		}
 
-#container a {
-  text-decoration: none;
+		@keyframes blink {
+			from,
+			to {
+				color: transparent;
+			}
+			50% {
+				color: rgb(34, 32, 30);
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.center {
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+
+			h1 {
+				font-size: 85px;
+				font-weight: 600;
+				text-align: center;
+				margin: 0 auto 0 auto;
+			}
+
+			.typing-container {
+				width: 350px;
+				margin: 0 auto;
+			}
+
+			.text {
+				margin: 10px 0 0 25px !important;
+				font-size: 20px;
+			}
+
+			.cursor {
+				font-size: 20px;
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		.center {
+			h1 {
+				font-size: 60px;
+			}
+
+			.typing-container {
+				width: 270px;
+				margin: 0 auto;
+			}
+
+			.text {
+				margin: 10px 0 0 15px !important;
+				font-size: 16px;
+			}
+
+			.cursor {
+				font-size: 18px;
+			}
+		}
+	}
+
+	@media (max-width: 375px) {
+		.center {
+			h1 {
+				font-size: 45px;
+			}
+
+			.typing-container {
+				width: 200px;
+				margin: 0 auto;
+			}
+
+			.text {
+				margin: 10px 0 0 10px !important;
+				font-size: 12px;
+			}
+
+			.cursor {
+				font-size: 16px;
+			}
+		}
+	}
 }
